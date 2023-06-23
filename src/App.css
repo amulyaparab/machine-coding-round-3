@@ -36,3 +36,26 @@
     transform: rotate(360deg);
   }
 }
+table,
+th,
+td {
+  border: 1px solid black;
+  border-collapse: collapse;
+  padding: 0.5rem 1rem;
+  margin: auto;
+}
+input {
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  width: 300px;
+}
+th {
+  cursor: pointer;
+}
+@media screen and (max-width: 1000px) {
+  table,
+  th,
+  td {
+    padding: 0.2rem;
+  }
+}
