@@ -13,15 +13,18 @@ export const DataProvider = ({ children }) => {
           search: action.payload,
           filteredData: state.snacks.filter(({ product_name, ingredients }) => {
             console.log(
-              ingredients.includes(
-                ingredients.filter((ingredient) =>
-                  ingredient.includes(action.payload)
-                )
+              ingredients.filter((ingredient) =>
+                ingredient.includes(action.payload)
               )
             );
-            return product_name
-              .toLowerCase()
-              .includes(action.payload.toLowerCase());
+            return (
+              product_name
+                .toLowerCase()
+                .includes(action.payload.toLowerCase()) ||
+              ingredients.filter((ingredient) =>
+                ingredient.toLowerCase().includes(action.payload.toLowerCase())
+              ).length
+            );
           }),
         };
 
